@@ -5,10 +5,7 @@ import SSmobileHeader from 'src/shared/layouts/SSmobileHeader.tsx'
 const HomePage = () => {
     return (
         <SSmobile
-            header={
-            <SSmobileHeader
-                title="1UP"
-            />}
+        
         >
             <Home />
         </SSmobile>
