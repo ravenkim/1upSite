@@ -5,7 +5,7 @@ import SSmobileHeader from 'src/shared/layouts/SSmobileHeader.tsx'
 const HomePage = () => {
     return (
         <SSmobile
-        
+
         >
             <Home />
         </SSmobile>
