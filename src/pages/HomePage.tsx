@@ -1,11 +1,11 @@
-import WhLayout from 'src/shared/layouts/WhLayout.tsx'
 import Home from 'src/features/Home.tsx'
+import SSmobile from 'src/shared/layouts/SSmobile.tsx'
 
 const HomePage = () => {
     return (
-        <WhLayout>
+        <SSmobile>
             <Home />
-        </WhLayout>
+        </SSmobile>
     )
 }
 
