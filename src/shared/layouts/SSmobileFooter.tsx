@@ -11,7 +11,7 @@ const menu = [
   {
     label: '아티스트',
     icon: Users,
-    to: '/artist',
+    to: '/artistlist',
   },
   {
     label: '히스토리',
@@ -44,7 +44,7 @@ const SSmobileFooter = () => {
             type="button"
             style={{ minWidth: 0 }}
           >
-            <Icon className="w-6 h-6 text-foreground group-hover:text-primary group-focus:text-primary transition-colors mb-0.5" />
+            <Icon className="w-6 h-6 text-foreground group-hover:text-primary group-focus:text-primary transition-colors mb-0.5" strokeWidth={1} />
             <span className="leading-tight text-[11px] whitespace-nowrap mt-0.5">{item.label}</span>
           </button>
         )
