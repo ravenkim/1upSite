@@ -314,9 +314,10 @@ class Media {
 
         const x = this.plane.position.x;
         const H = this.viewport.width / 2;
+        const yOffset =2;
 
         if (this.bend === 0) {
-            this.plane.position.y = 0;
+            this.plane.position.y = 0 + yOffset;
             this.plane.rotation.z = 0;
         } else {
             const B_abs = Math.abs(this.bend);
@@ -325,10 +326,10 @@ class Media {
 
             const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
             if (this.bend > 0) {
-                this.plane.position.y = -arc;
+                this.plane.position.y = -arc + yOffset;
                 this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
             } else {
-                this.plane.position.y = arc;
+                this.plane.position.y = arc + yOffset;
                 this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
             }
         }
@@ -654,6 +655,7 @@ export default function CircularGallery({
                                             borderRadius = 0.05,
                                             font = "bold 30px Figtree",
                                             scrollSpeed = 2,
+
                                             scrollEase = 0.05,
                                         }: CircularGalleryProps) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -672,5 +674,5 @@ export default function CircularGallery({
             app.destroy();
         };
     }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
-    return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
+    return <div className=" w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }
