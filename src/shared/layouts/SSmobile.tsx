@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import SSmobileFooter from 'src/shared/layouts/SSmobileFooter.tsx'
 import { ScrollArea } from 'src/shared/lib/shadcn/components/ui/scroll-area.tsx'
 
@@ -20,24 +20,34 @@ const FOOTER_HEIGHT = 68
 const SSmobile: React.FC<SSmobileProps> = ({ header, footer, children }) => {
     const height = header ? HEADER_HEIGHT + FOOTER_HEIGHT : FOOTER_HEIGHT
 
-
+    useEffect(() => {
+        const preventGesture = (e) => {
+            // 좌우 스와이프(터치 이동)일 때만 막기
+            if (e.touches && e.touches.length === 1) {
+                e.preventDefault()
+            }
+        }
+        document.body.addEventListener('touchmove', preventGesture, {
+            passive: false,
+        })
+        return () => {
+            document.body.removeEventListener('touchmove', preventGesture)
+        }
+    }, [])
 
     return (
         <div className="bg-background text-foreground border-border relative mx-auto flex min-h-[100dvh] max-w-md flex-col overflow-hidden border shadow-lg">
             {/* 상단 헤더 */}
             {header && (
-                <header className="bg-background/90 border-border sticky top-0 z-10 border-b px-4  backdrop-blur">
+                <header className="bg-background/90 border-border sticky top-0 z-10 border-b px-4 backdrop-blur">
                     {header}
                 </header>
             )}
             {/* 중앙 컨텐츠 */}
             <ScrollArea
-
-                className={` `}
-                style={{ height: `calc(100dvh - ${height + 5 }px)` }}
+                className={`w-full`}
+                style={{ height: `calc(100dvh - ${height + 5}px) ` }}
             >
-
-
                 {children as React.ReactNode}
             </ScrollArea>
             {/* 하단 네비게이션/푸터 */}

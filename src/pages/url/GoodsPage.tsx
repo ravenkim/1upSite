@@ -31,15 +31,7 @@ const GoodsPage = () => {
 
 
           <div style={{height: '500px', position: 'relative'}}>
-              <InfiniteScroll
-                  items={dummyProducts}
-                  isTilted={true}
-                  tiltDirection='left'
-                  autoplay={true}
-                  autoplaySpeed={1}
-                  autoplayDirection="down"
-                  pauseOnHover={true}
-              />
+
           </div>
       </div>
     </SSmobile>

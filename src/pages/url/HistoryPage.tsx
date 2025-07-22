@@ -1,11 +1,48 @@
 import React from 'react'
 import SSmobile from 'src/shared/layouts/SSmobile.tsx'
+import CircularGallery from 'src/shared/lib/reactBits/CircularGallery.tsx';
 
 const HistoryPage = () => {
   return (
-    <SSmobile>
-      <div className="text-center py-10">팀 연혁/히스토리</div>
-    </SSmobile>
+      <SSmobile>
+          <div
+            className={'w-full p-3 flex flex-col'}
+          >
+
+              <h3 className="   tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">Welcome
+                  to our label</h3>
+              <p className="text-base font-normal leading-normal pb-3 pt-1 px-4">
+                  We are a record label that focuses on discovering and promoting new artists. We are passionate about
+                  music and believe in the power of music to connect people.
+              </p>
+              <h2 className=" text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5">Featured
+                  Artists</h2>
+
+              {/* 아래에 CircularGallery 예시 추가 */}
+              <div
+                  style={{
+                      width: '100%',
+                      position: 'relative',
+                      paddingTop: '100%', 
+                  }}
+              >
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+                  <CircularGallery
+                    items={[
+                      { image: 'https://picsum.photos/seed/100/800/600?grayscale', text: 'History Example 1' },
+                      { image: 'https://picsum.photos/seed/101/800/600?grayscale', text: 'History Example 2' },
+                      { image: 'https://picsum.photos/seed/102/800/600?grayscale', text: 'History Example 3' }
+                    ]}
+                    bend={1} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02}
+                  />
+                </div>
+              </div>
+
+
+
+
+          </div>
+      </SSmobile>
   )
 }
 
