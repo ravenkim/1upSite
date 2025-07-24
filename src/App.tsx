@@ -1,12 +1,7 @@
-import { Outlet } from 'react-router-dom'
-import './App.css'
+import MobileLayout from './layouts/MobileLayout';
 
 function App() {
-  return (
-    <>
-      <Outlet />
-    </>
-  )
+  return <MobileLayout />;
 }
 
-export default App
+export default App;
