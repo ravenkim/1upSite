@@ -1,17 +1,10 @@
-import Home from 'src/features/Home.tsx'
-import SSmobile from 'src/shared/layouts/SSmobile.tsx'
-import SSmobileHeader from 'src/shared/layouts/SSmobileHeader.tsx'
-import mainImage from 'src/assets/images/main.png'
+import { Link } from 'react-router-dom'
 
-const HomePage = () => {
-    return (
-        <SSmobile
-
-        >
-
-            <Home />
-        </SSmobile>
-    )
+export default function HomePage() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <Link to="/about">About</Link>
+    </div>
+  )
 }
-
-export default HomePage
