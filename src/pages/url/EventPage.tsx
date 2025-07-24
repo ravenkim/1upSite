@@ -6,8 +6,8 @@ const EventPage = () => {
   return (
     <SSmobile>
       <div
-          className={'w-full p-3 flex flex-col'}
-          style={{ padding: 20 }}>
+          className={'w-full p-8 flex flex-col'}
+          >
 
 
         <EventCard

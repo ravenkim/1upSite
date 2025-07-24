@@ -12,22 +12,23 @@ const HistoryPage = () => {
   return (
       <SSmobile>
           <div
-            className={'w-full p-3 flex flex-col'}
+            className={'w-full  flex flex-col'}
           >
+              <div className={'px-8'}>
+                  <h3 className="   tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">Welcome
+                      to our label</h3>
+                  <p className="text-base font-normal leading-normal pb-3 pt-1 px-4">
+                      We are a record label that focuses on discovering and promoting new artists. We are passionate
+                      about
+                      music and believe in the power of music to connect people.
+                  </p>
 
-              <h3 className="   tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">Welcome
-                  to our label</h3>
-              <p className="text-base font-normal leading-normal pb-3 pt-1 px-4">
-                  We are a record label that focuses on discovering and promoting new artists. We are passionate about
-                  music and believe in the power of music to connect people.
-              </p>
 
-
-              <h3 className="   tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">연혁</h3>
-              {/* 연혁 타임라인 추가 */}
-              <Timeline items={historyItems} />
-              <h2 className=" text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5">협동 앨범</h2>
-
+                  <h3 className="   tracking-light text-2xl font-bold leading-tight px-4 text-left pb-2 pt-5">연혁</h3>
+                  {/* 연혁 타임라인 추가 */}
+                  <Timeline items={historyItems} />
+                  <h2 className=" text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pt-5">협동 앨범</h2>
+              </div>
               {/* 아래에 CircularGallery 예시 추가 */}
               <div
                   style={{

@@ -39,7 +39,7 @@ const ArtistPage = () => {
                   <div className="flex items-center bg-background p-4 pb-2 justify-between">
                       <h2 className="text-foreground text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12 pr-12">Artists</h2>
                   </div>
-                  <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                  <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-8">
                       <div className="flex flex-col gap-3 pb-3">
                           <div
                               className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"

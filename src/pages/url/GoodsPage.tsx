@@ -19,7 +19,7 @@ const items = [
     {
         image: 'https://picsum.photos/500/500?grayscale',
         link: 'https://google.com/',
-        title: '멋쟁이 모자',
+        title: '',
         description: '1200원'
     },
     {
