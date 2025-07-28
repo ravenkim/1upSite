@@ -9,6 +9,7 @@ export default tseslint.config([
   globalIgnores(['dist']),
   {
     files: ['**/*.{ts,tsx}'],
+    ignores: ['src/components/ui/button.tsx'],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,

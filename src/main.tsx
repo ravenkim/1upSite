@@ -5,6 +5,11 @@ import './index.css'
 import App from './App.tsx'
 import HomePage from './pages/HomePage.tsx'
 import AboutPage from './pages/AboutPage.tsx'
+import ArtistPage from './pages/ArtistPage.tsx'
+import HistoryPage from './pages/HistoryPage.tsx'
+import EventPage from './pages/EventPage.tsx'
+import GoodsPage from './pages/GoodsPage.tsx'
+import { LanguageProvider } from './providers/LanguageProvider.tsx'
 
 const router = createBrowserRouter([
   {
@@ -19,12 +24,30 @@ const router = createBrowserRouter([
         path: 'about',
         element: <AboutPage />,
       },
+      {
+        path: 'artist',
+        element: <ArtistPage />,
+      },
+      {
+        path: 'history',
+        element: <HistoryPage />,
+      },
+      {
+        path: 'event',
+        element: <EventPage />,
+      },
+      {
+        path: 'goods',
+        element: <GoodsPage />,
+      },
     ],
   },
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <LanguageProvider>
+      <RouterProvider router={router} />
+    </LanguageProvider>
   </StrictMode>,
 )

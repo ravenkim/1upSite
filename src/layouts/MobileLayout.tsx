@@ -3,30 +3,40 @@ import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../hooks/useLanguage';
+import { ScrollArea } from '@/components/ui/scroll-area.tsx'
 
 export default function MobileLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+  };
+
   return (
-    <div className="h-screen bg-muted flex items-center justify-center">
-      <div className="w-full max-w-md h-full sm:h-auto sm:max-h-[90vh] bg-background shadow-lg rounded-lg flex flex-col border">
-        <header className="flex items-center justify-between p-4 border-b">
+    <div className="min-h-screen bg-muted flex items-start sm:items-center justify-center">
+      <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg border-x sm:border h-screen sm:h-[90vh] overflow-hidden">
+        <header className="flex h-[60px] shrink-0 items-center justify-between border-b px-4">
           <Link to="/" className="text-2xl font-bold tracking-tight">
             1UP
           </Link>
-          <Button variant="ghost" size="icon" onClick={toggleMenu}>
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <Button variant="ghost"  className={'p-0'} onClick={toggleMenu}>
+              <Menu className="h-12 w-12 " />
           </Button>
         </header>
 
-        <main className="flex-grow p-4 overflow-y-auto">
-          <Outlet />
+        <main className="h-[calc(100%-60px)]">
+          <ScrollArea className="h-full">
+            <Outlet />
+          </ScrollArea>
         </main>
 
+        
       </div>
 
       {isMenuOpen && (
@@ -34,14 +44,37 @@ export default function MobileLayout() {
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="absolute top-4 right-4">
             <X className="h-8 w-8" />
           </Button>
-          <nav className="flex flex-col space-y-4 text-center">
-            <Link to="/" className="text-4xl font-bold" onClick={toggleMenu}>
-              Home
+          <nav className="flex flex-col w-full max-w-xs">
+            <Link to="/" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+              {t('home')}
             </Link>
-            <Link to="/about" className="text-4xl font-bold" onClick={toggleMenu}>
-              About
+            <Link to="/artist" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+              {t('artist')}
+            </Link>
+            <Link to="/history" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+              {t('history')}
+            </Link>
+            <Link to="/event" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+              {t('event')}
+            </Link>
+            <Link to="/goods" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+              {t('goods')}
             </Link>
           </nav>
+          <div className="absolute bottom-8 flex space-x-4">
+            <Button
+              variant={language === 'ko' ? 'default' : 'ghost'}
+              onClick={() => handleLanguageChange('ko')}
+            >
+              KOR
+            </Button>
+            <Button
+              variant={language === 'en' ? 'default' : 'ghost'}
+              onClick={() => handleLanguageChange('en')}
+            >
+              ENG
+            </Button>
+          </div>
         </div>
       )}
     </div>

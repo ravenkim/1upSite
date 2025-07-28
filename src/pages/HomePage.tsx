@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
+import main2 from '../assets/main2.jpg';
 
 export default function HomePage() {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <Link to="/about">About</Link>
+    <div
+        className={'w-full h-full'}
+    >
+      <img src={main2} alt="main image" />
     </div>
   )
 }

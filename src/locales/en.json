@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "artist": "Artist",
+  "history": "History",
+  "event": "Event",
+  "goods": "Goods",
+  "language": "Language",
+  "korean": "Korean",
+  "english": "English",
+  "welcome_home": "Welcome to the Home Page!",
+  "welcome_artist": "Welcome to the Artist Page!",
+  "welcome_history": "Welcome to the History Page!",
+  "welcome_event": "Welcome to the Event Page!",
+  "welcome_goods": "Welcome to the Goods Page!",
+  "welcome_about": "Welcome to the About Page!"
+}
