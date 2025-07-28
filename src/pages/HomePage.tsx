@@ -1,4 +1,4 @@
-import main2 from '../assets/main2.jpg';
+import main2 from '../assets/images/main2.jpg';
 import MobileLayout from '@/layouts/MobileLayout.tsx'
 
 export default function HomePage() {
