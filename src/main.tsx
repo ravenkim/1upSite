@@ -10,6 +10,7 @@ import HistoryPage from './pages/HistoryPage.tsx'
 import EventPage from './pages/EventPage.tsx'
 import GoodsPage from './pages/GoodsPage.tsx'
 import { LanguageProvider } from './providers/LanguageProvider.tsx'
+import ArtistDetailPage from '@/pages/ArtistDetailPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: 'artist',
         element: <ArtistPage />,
+      },
+      {
+        path: 'artist/:id',
+        element: <ArtistDetailPage />,
       },
       {
         path: 'history',
