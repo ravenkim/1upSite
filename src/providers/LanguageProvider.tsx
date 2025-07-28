@@ -1,10 +1,10 @@
-import React, { useState, ReactNode, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import enTranslations from '../locales/en.json';
 import koTranslations from '../locales/ko.json';
 import { LanguageContext } from '../contexts/LanguageContext';
 
 interface LanguageProviderProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 type TranslationValue = string | { [key: string]: TranslationValue };
