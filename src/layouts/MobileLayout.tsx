@@ -20,7 +20,7 @@ export default function MobileLayout() {
 
   return (
     <div className="min-h-screen bg-muted flex items-start sm:items-center justify-center">
-      <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg border-x sm:border h-screen sm:h-[90vh] overflow-hidden">
+      <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg h-screen sm:h-[90vh] overflow-hidden sm:outline sm:outline-1 sm:outline-border">
         <header className="flex h-[60px] shrink-0 items-center justify-between border-b px-4">
           <Link to="/" className="text-2xl font-bold tracking-tight">
             1UP
@@ -45,19 +45,19 @@ export default function MobileLayout() {
            <X  className="size-6" />
           </Button>
           <nav className="flex flex-col w-full max-w-xs">
-            <Link to="/" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+            <Link to="/" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
               {t('home')}
             </Link>
-            <Link to="/artist" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+            <Link to="/artist" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
               {t('artist')}
             </Link>
-            <Link to="/history" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+            <Link to="/history" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
               {t('history')}
             </Link>
-            <Link to="/event" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+            <Link to="/event" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
               {t('event')}
             </Link>
-            <Link to="/goods" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
+            <Link to="/goods" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
               {t('goods')}
             </Link>
           </nav>
