@@ -1,7 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+
 @custom-variant dark (&:is(.dark *));
+
+
+@theme {
+  --font-pretendard: 'Pretendard', sans-serif;
+}
 
 @theme inline {
 
@@ -213,6 +226,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-pretendard;
   }
 }
