@@ -1,12 +1,15 @@
 
-import { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {  Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area.tsx'
+import MobileHeader from '@/layouts/MobileHeader.tsx'
 
-export default function MobileLayout() {
+export default function MobileLayout({
+    children,
+                                     }  : { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
@@ -21,18 +24,13 @@ export default function MobileLayout() {
   return (
     <div className="min-h-screen bg-muted flex items-start sm:items-center justify-center">
       <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg h-screen sm:h-[90vh] overflow-hidden sm:outline sm:outline-1 sm:outline-border">
-        <header className="flex h-[60px] shrink-0 items-center justify-between border-b px-4">
-          <Link to="/" className="text-2xl font-bold tracking-tight">
-            1UP
-          </Link>
-          <Button variant="ghost" size="icon" onClick={toggleMenu}>
-                <Menu className="size-6" />
-          </Button>
-        </header>
+        <MobileHeader
+            toggleMenu={toggleMenu}
+        />
 
         <main className="h-[calc(100%-60px)]">
           <ScrollArea className="h-full">
-            <Outlet />
+            {children}
           </ScrollArea>
         </main>
 

@@ -1,10 +1,13 @@
 import { useLanguage } from '../hooks/useLanguage';
+import MobileLayout from '@/layouts/MobileLayout.tsx'
 
 export default function HistoryPage() {
   const { t } = useLanguage();
   return (
-    <div>
-      <h1>{t('welcome.history')}</h1>
-    </div>
+      <MobileLayout>
+          <div>
+              <h1>{t('welcome.history')}</h1>
+          </div>
+      </MobileLayout>
   );
 }

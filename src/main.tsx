@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import App from './App.tsx'
+// import App from './App.tsx'
 import HomePage from './pages/HomePage.tsx'
 import AboutPage from './pages/AboutPage.tsx'
 import ArtistPage from './pages/ArtistPage.tsx'
@@ -15,7 +15,6 @@ import ArtistDetailPage from '@/pages/ArtistDetailPage.tsx'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
     children: [
       {
         index: true,
