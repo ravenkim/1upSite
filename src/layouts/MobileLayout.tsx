@@ -25,8 +25,8 @@ export default function MobileLayout() {
           <Link to="/" className="text-2xl font-bold tracking-tight">
             1UP
           </Link>
-          <Button variant="ghost"  className={'p-0'} onClick={toggleMenu}>
-              <Menu className="h-12 w-12 " />
+          <Button variant="ghost" size="icon" onClick={toggleMenu}>
+                <Menu className="size-6" />
           </Button>
         </header>
 
@@ -41,8 +41,8 @@ export default function MobileLayout() {
 
       {isMenuOpen && (
         <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
-          <Button variant="ghost" size="icon" onClick={toggleMenu} className="absolute top-4 right-4">
-            <X className="h-8 w-8" />
+          <Button variant="ghost" size="icon" onClick={toggleMenu} className="absolute top-3 right-4">
+           <X  className="size-6" />
           </Button>
           <nav className="flex flex-col w-full max-w-xs">
             <Link to="/" className="text-4xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
