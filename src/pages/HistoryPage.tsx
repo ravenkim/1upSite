@@ -4,7 +4,7 @@ export default function HistoryPage() {
   const { t } = useLanguage();
   return (
     <div>
-      <h1>{t('welcome_history')}</h1>
+      <h1>{t('welcome.history')}</h1>
     </div>
   );
 }

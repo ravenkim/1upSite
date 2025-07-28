@@ -46,19 +46,19 @@ export default function MobileLayout() {
           </Button>
           <nav className="flex flex-col w-full max-w-xs">
             <Link to="/" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('home')}
+              {t('menu.home')}
             </Link>
             <Link to="/artist" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('artist')}
+              {t('menu.artist')}
             </Link>
             <Link to="/history" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('history')}
+              {t('menu.history')}
             </Link>
             <Link to="/event" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('event')}
+              {t('menu.event')}
             </Link>
             <Link to="/goods" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('goods')}
+              {t('menu.goods')}
             </Link>
           </nav>
           <div className="absolute bottom-8 flex space-x-4">
@@ -66,13 +66,13 @@ export default function MobileLayout() {
               variant={language === 'ko' ? 'default' : 'ghost'}
               onClick={() => handleLanguageChange('ko')}
             >
-              KOR
+              {t('language.korean')}
             </Button>
             <Button
               variant={language === 'en' ? 'default' : 'ghost'}
               onClick={() => handleLanguageChange('en')}
             >
-              ENG
+              {t('language.english')}
             </Button>
           </div>
         </div>

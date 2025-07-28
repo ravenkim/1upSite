@@ -7,8 +7,10 @@ interface LanguageProviderProps {
   children: ReactNode;
 }
 
+type TranslationValue = string | { [key: string]: TranslationValue };
+
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const translations: { [key: string]: { [key: string]: string } } = {
+  const translations: Record<string, TranslationValue> = {
     en: enTranslations,
     ko: koTranslations,
   };
@@ -23,7 +25,17 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   }, [language]);
 
   const t = (key: string): string => {
-    return translations[language]?.[key] || key; // Fallback to key if translation not found
+    const keys = key.split('.');
+    let currentTranslation: TranslationValue = translations[language];
+
+    for (let i = 0; i < keys.length; i++) {
+      if (currentTranslation && typeof currentTranslation === 'object' && keys[i] in currentTranslation) {
+        currentTranslation = currentTranslation[keys[i]];
+      } else {
+        return key;
+      }
+    }
+    return typeof currentTranslation === 'string' ? currentTranslation : key;
   };
 
   return (

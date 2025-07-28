@@ -4,7 +4,7 @@ export default function GoodsPage() {
   const { t } = useLanguage();
   return (
     <div>
-      <h1>{t('welcome_goods')}</h1>
+      <h1>{t('welcome.goods')}</h1>
 
 
 
