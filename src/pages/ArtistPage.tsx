@@ -1,13 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { artists } from '../data/artists';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { artists } from '../data/artists'
 import MobileLayout from '@/layouts/MobileLayout.tsx'
+import { useLanguage } from '@/hooks/useLanguage'
 
 const ArtistPage: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
-      <MobileLayout>
+      <MobileLayout
+          title="Artists"
+      >
           <div className="container mx-auto p-4 bg-background text-foreground">
-              <h1 className="text-4xl font-bold mb-8 text-center">Our Members</h1>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {artists.map((artist) => (
                       <div key={artist.id}
@@ -19,7 +23,7 @@ const ArtistPage: React.FC = () => {
                               </div>
                               <div className="p-2">
                                   <h2 className="text-xl font-semibold mb-1">{artist.name}</h2>
-                                  <p className="text-md ">{artist.profession}</p>
+                                  <p className="text-md ">{artist.profession[language as keyof typeof artist.profession]}</p>
                               </div>
                           </Link>
                       </div>

@@ -1,4 +1,4 @@
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../hooks/useLanguage'
 import MobileLayout from '@/layouts/MobileLayout.tsx'
 
 export default function EventPage() {

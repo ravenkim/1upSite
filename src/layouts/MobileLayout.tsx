@@ -1,15 +1,15 @@
-
-import React, { useState } from 'react';
-import {  Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
-import { useLanguage } from '../hooks/useLanguage';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Button } from '@/components/ui/button'
+import { X } from 'lucide-react'
+import { useLanguage } from '../hooks/useLanguage'
 import { ScrollArea } from '@/components/ui/scroll-area.tsx'
 import MobileHeader from '@/layouts/MobileHeader.tsx'
 
 export default function MobileLayout({
     children,
-                                     }  : { children: React.ReactNode }) {
+    title = '1UP',
+                                     }  : { children?: React.ReactNode, title?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
@@ -26,6 +26,7 @@ export default function MobileLayout({
       <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg h-screen sm:h-[90vh] overflow-hidden sm:outline sm:outline-1 sm:outline-border">
         <MobileHeader
             toggleMenu={toggleMenu}
+            title={title}
         />
 
         <main className="h-[calc(100%-60px)]">

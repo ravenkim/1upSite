@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import enTranslations from '../locales/en.json';
-import koTranslations from '../locales/ko.json';
-import { LanguageContext } from '../contexts/LanguageContext';
+import React, { useEffect, useState } from 'react'
+import enTranslations from '../locales/en.json'
+import koTranslations from '../locales/ko.json'
+import { LanguageContext } from '../contexts/LanguageContext'
 
 interface LanguageProviderProps {
   children: React.ReactNode;

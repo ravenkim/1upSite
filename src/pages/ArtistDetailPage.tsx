@@ -1,15 +1,19 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { getArtistById } from '../data/artists';
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { getArtistById } from '../data/artists'
 import MobileLayout from '@/layouts/MobileLayout.tsx'
+import { useLanguage } from '@/hooks/useLanguage'
 
 const ArtistDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const artist = getArtistById(id || '');
+  const { language } = useLanguage();
 
   if (!artist) {
     return <div className="text-center text-xl text-destructive mt-10">Artist not found.</div>;
   }
+
+  const displayedBio = artist.bio[language as keyof typeof artist.bio];
 
   return (
       <MobileLayout>
@@ -21,8 +25,8 @@ const ArtistDetailPage: React.FC = () => {
             </div>
             <div className="p-8">
               <h1 className="text-4xl font-bold mb-2">{artist.name}</h1>
-              <p className="text-xl mb-4">{artist.profession}</p>
-              <p className="leading-relaxed">{artist.bio}</p>
+              <p className="text-xl mb-4">{artist.profession[language as keyof typeof artist.profession]}</p>
+              <p className="leading-relaxed">{displayedBio}</p>
             </div>
           </div>
         </div>
