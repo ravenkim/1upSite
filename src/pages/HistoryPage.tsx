@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/timeline.tsx'
 import { historyEvents, type HistoryEvent } from '../data/history'
 import { useLanguage } from '@/hooks/useLanguage'
+import ThreeDCarousel from '@/components/CircularImageSlider.tsx'
 
 export default function HistoryPage() {
     const { language } = useLanguage()
@@ -42,6 +43,8 @@ export default function HistoryPage() {
                     ))}
                 </Timeline>
             </div>
+
+            <ThreeDCarousel/>
         </MobileLayout>
     )
 }
