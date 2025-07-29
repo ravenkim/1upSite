@@ -26,11 +26,11 @@ export default function MobileLayout({
 
     return (
         <div className="bg-muted flex min-h-screen items-start justify-center sm:items-center">
-            <div className="bg-background sm:outline-border flex h-screen w-full max-w-md flex-col overflow-hidden shadow-lg sm:h-[90vh] sm:rounded-lg sm:outline sm:outline-1">
+            <div className="box-border bg-background sm:outline-border flex h-screen w-full max-w-md flex-col overflow-hidden shadow-lg sm:h-[90vh] sm:rounded-lg sm:outline sm:outline-1">
                 <MobileHeader toggleMenu={toggleMenu} title={title} />
 
-                <main className="h-[calc(100%-60px)]">
-                    <ScrollArea className="h-full">{children}</ScrollArea>
+                <main className="h-[calc(100%-60px)] w-full">
+                    <ScrollArea className="h-full w-full">{children}</ScrollArea>
                 </main>
             </div>
 
