@@ -1,4 +1,5 @@
 import MobileLayout from '@/layouts/MobileLayout.tsx'
+import ThreeDCarousel from '@/components/CircularImageSlider.tsx'
 
 export default function GoodsPage() {
     return (
@@ -8,6 +9,7 @@ export default function GoodsPage() {
             >
 
             </div>
+            <ThreeDCarousel/>
         </MobileLayout>
     )
 }
