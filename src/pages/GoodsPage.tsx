@@ -1,15 +1,11 @@
 import MobileLayout from '@/layouts/MobileLayout.tsx'
-import ThreeDCarousel from '@/components/CircularImageSlider.tsx'
+import ProductCardCarousel from '@/components/ProductShowcase.tsx'
 
 export default function GoodsPage() {
     return (
         <MobileLayout>
-            <div
-                className={'w-full h-20 bg-amber-200'}
-            >
 
-            </div>
-            <ThreeDCarousel/>
+            <ProductCardCarousel/>
         </MobileLayout>
     )
 }
