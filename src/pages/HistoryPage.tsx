@@ -11,7 +11,7 @@ import { historyEvents, type HistoryEvent } from '../data/history'
 import { useLanguage } from '@/hooks/useLanguage'
 
 export default function HistoryPage() {
-    const { language } = useLanguage();
+    const { language } = useLanguage()
 
     return (
         <MobileLayout>
@@ -21,15 +21,27 @@ export default function HistoryPage() {
                         <TimelineItem key={item.id}>
                             <TimelineHeader>
                                 <TimelineTime>{item.year}</TimelineTime>
-                                <TimelineTitle>{item.title[language as keyof typeof item.title]}</TimelineTitle>
+                                <TimelineTitle>
+                                    {
+                                        item.title[
+                                            language as keyof typeof item.title
+                                        ]
+                                    }
+                                </TimelineTitle>
                             </TimelineHeader>
                             {item.description && (
-                                <TimelineDescription>{item.description[language as keyof typeof item.description]}</TimelineDescription>
+                                <TimelineDescription>
+                                    {
+                                        item.description[
+                                            language as keyof typeof item.description
+                                        ]
+                                    }
+                                </TimelineDescription>
                             )}
                         </TimelineItem>
                     ))}
                 </Timeline>
             </div>
         </MobileLayout>
-    );
+    )
 }

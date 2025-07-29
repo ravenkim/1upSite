@@ -9,73 +9,94 @@ import MobileHeader from '@/layouts/MobileHeader.tsx'
 export default function MobileLayout({
     children,
     title = '1UP',
-                                     }  : { children?: React.ReactNode, title?: string }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+}: {
+    children?: React.ReactNode
+    title?: string
+}) {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { language, setLanguage, t } = useLanguage()
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
 
-  const handleLanguageChange = (lang: string) => {
-    setLanguage(lang);
-  };
+    const handleLanguageChange = (lang: string) => {
+        setLanguage(lang)
+    }
 
-  return (
-    <div className="min-h-screen bg-muted flex items-start sm:items-center justify-center">
-      <div className="w-full max-w-md flex flex-col bg-background shadow-lg sm:rounded-lg h-screen sm:h-[90vh] overflow-hidden sm:outline sm:outline-1 sm:outline-border">
-        <MobileHeader
-            toggleMenu={toggleMenu}
-            title={title}
-        />
+    return (
+        <div className="bg-muted flex min-h-screen items-start justify-center sm:items-center">
+            <div className="bg-background sm:outline-border flex h-screen w-full max-w-md flex-col overflow-hidden shadow-lg sm:h-[90vh] sm:rounded-lg sm:outline sm:outline-1">
+                <MobileHeader toggleMenu={toggleMenu} title={title} />
 
-        <main className="h-[calc(100%-60px)]">
-          <ScrollArea className="h-full">
-            {children}
-          </ScrollArea>
-        </main>
+                <main className="h-[calc(100%-60px)]">
+                    <ScrollArea className="h-full">{children}</ScrollArea>
+                </main>
+            </div>
 
-        
-      </div>
-
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-background z-50 flex flex-col items-center justify-center">
-          <Button variant="ghost" size="icon" onClick={toggleMenu} className="absolute top-3 right-4">
-           <X  className="size-6" />
-          </Button>
-          <nav className="flex flex-col w-full max-w-xs">
-            <Link to="/" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('menu.home')}
-            </Link>
-            <Link to="/artist" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('menu.artist')}
-            </Link>
-            <Link to="/history" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('menu.history')}
-            </Link>
-            <Link to="/event" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('menu.event')}
-            </Link>
-            <Link to="/goods" className="text-2xl font-bold py-4 border-b text-center" onClick={toggleMenu}>
-              {t('menu.goods')}
-            </Link>
-          </nav>
-          <div className="absolute bottom-8 flex space-x-4">
-            <Button
-              variant={language === 'ko' ? 'default' : 'ghost'}
-              onClick={() => handleLanguageChange('ko')}
-            >
-              {t('language.korean')}
-            </Button>
-            <Button
-              variant={language === 'en' ? 'default' : 'ghost'}
-              onClick={() => handleLanguageChange('en')}
-            >
-              {t('language.english')}
-            </Button>
-          </div>
+            {isMenuOpen && (
+                <div className="bg-background fixed inset-0 z-50 flex flex-col items-center justify-center">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={toggleMenu}
+                        className="absolute top-3 right-4"
+                    >
+                        <X className="size-6" />
+                    </Button>
+                    <nav className="flex w-full max-w-xs flex-col">
+                        <Link
+                            to="/"
+                            className="border-b py-4 text-center text-2xl font-bold"
+                            onClick={toggleMenu}
+                        >
+                            {t('menu.home')}
+                        </Link>
+                        <Link
+                            to="/artist"
+                            className="border-b py-4 text-center text-2xl font-bold"
+                            onClick={toggleMenu}
+                        >
+                            {t('menu.artist')}
+                        </Link>
+                        <Link
+                            to="/history"
+                            className="border-b py-4 text-center text-2xl font-bold"
+                            onClick={toggleMenu}
+                        >
+                            {t('menu.history')}
+                        </Link>
+                        <Link
+                            to="/event"
+                            className="border-b py-4 text-center text-2xl font-bold"
+                            onClick={toggleMenu}
+                        >
+                            {t('menu.event')}
+                        </Link>
+                        <Link
+                            to="/goods"
+                            className="border-b py-4 text-center text-2xl font-bold"
+                            onClick={toggleMenu}
+                        >
+                            {t('menu.goods')}
+                        </Link>
+                    </nav>
+                    <div className="absolute bottom-8 flex space-x-4">
+                        <Button
+                            variant={language === 'ko' ? 'default' : 'ghost'}
+                            onClick={() => handleLanguageChange('ko')}
+                        >
+                            {t('language.korean')}
+                        </Button>
+                        <Button
+                            variant={language === 'en' ? 'default' : 'ghost'}
+                            onClick={() => handleLanguageChange('en')}
+                        >
+                            {t('language.english')}
+                        </Button>
+                    </div>
+                </div>
+            )}
         </div>
-      )}
-    </div>
-  );
+    )
 }

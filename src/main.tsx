@@ -13,45 +13,45 @@ import { LanguageProvider } from './providers/LanguageProvider.tsx'
 import ArtistDetailPage from '@/pages/ArtistDetailPage.tsx'
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: 'about',
-        element: <AboutPage />,
-      },
-      {
-        path: 'artist',
-        element: <ArtistPage />,
-      },
-      {
-        path: 'artist/:id',
-        element: <ArtistDetailPage />,
-      },
-      {
-        path: 'history',
-        element: <HistoryPage />,
-      },
-      {
-        path: 'event',
-        element: <EventPage />,
-      },
-      {
-        path: 'goods',
-        element: <GoodsPage />,
-      },
-    ],
-  },
+    {
+        path: '/',
+        children: [
+            {
+                index: true,
+                element: <HomePage />,
+            },
+            {
+                path: 'about',
+                element: <AboutPage />,
+            },
+            {
+                path: 'artist',
+                element: <ArtistPage />,
+            },
+            {
+                path: 'artist/:id',
+                element: <ArtistDetailPage />,
+            },
+            {
+                path: 'history',
+                element: <HistoryPage />,
+            },
+            {
+                path: 'event',
+                element: <EventPage />,
+            },
+            {
+                path: 'goods',
+                element: <GoodsPage />,
+            },
+        ],
+    },
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <LanguageProvider>
-      <RouterProvider router={router} />
-    </LanguageProvider>
-  </StrictMode>,
+    <StrictMode>
+        <LanguageProvider>
+            <RouterProvider router={router} />
+        </LanguageProvider>
+    </StrictMode>,
 )

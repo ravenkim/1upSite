@@ -1,22 +1,22 @@
 {
-  "menu": {
-    "home": "Home",
-    "artist": "Artist",
-    "history": "History",
-    "event": "Event",
-    "goods": "Goods"
-  },
-  "language": {
-    "language_selection": "Language",
-    "korean": "Korean",
-    "english": "English"
-  },
-  "welcome": {
-    "home": "Welcome to the Home Page!",
-    "artist": "Welcome to the Artist Page!",
-    "history": "Welcome to the History Page!",
-    "event": "Welcome to the Event Page!",
-    "goods": "Welcome to the Goods Page!",
-    "about": "Welcome to the About Page!"
-  }
+    "menu": {
+        "home": "Home",
+        "artist": "Artist",
+        "history": "History",
+        "event": "Event",
+        "goods": "Goods"
+    },
+    "language": {
+        "language_selection": "Language",
+        "korean": "Korean",
+        "english": "English"
+    },
+    "welcome": {
+        "home": "Welcome to the Home Page!",
+        "artist": "Welcome to the Artist Page!",
+        "history": "Welcome to the History Page!",
+        "event": "Welcome to the Event Page!",
+        "goods": "Welcome to the Goods Page!",
+        "about": "Welcome to the About Page!"
+    }
 }

@@ -1,7 +1,7 @@
 import MobileLayout from './layouts/MobileLayout'
 
 function App() {
-  return <MobileLayout />;
+    return <MobileLayout />
 }
 
-export default App;
+export default App

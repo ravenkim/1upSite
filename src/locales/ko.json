@@ -1,22 +1,22 @@
 {
-  "menu": {
-    "home": "홈",
-    "artist": "아티스트",
-    "history": "히스토리",
-    "event": "이벤트",
-    "goods": "굿즈"
-  },
-  "language": {
-    "language_selection": "언어",
-    "korean": "한국어",
-    "english": "영어"
-  },
-  "welcome": {
-    "home": "홈 페이지에 오신 것을 환영합니다!",
-    "artist": "아티스트 페이지에 오신 것을 환영합니다!",
-    "history": "히스토리 페이지에 오신 것을 환영합니다!",
-    "event": "이벤트 페이지에 오신 것을 환영합니다!",
-    "goods": "굿즈 페이지에 오신 것을 환영합니다!",
-    "about": "소개 페이지에 오신 것을 환영합니다!"
-  }
+    "menu": {
+        "home": "홈",
+        "artist": "아티스트",
+        "history": "히스토리",
+        "event": "이벤트",
+        "goods": "굿즈"
+    },
+    "language": {
+        "language_selection": "언어",
+        "korean": "한국어",
+        "english": "영어"
+    },
+    "welcome": {
+        "home": "홈 페이지에 오신 것을 환영합니다!",
+        "artist": "아티스트 페이지에 오신 것을 환영합니다!",
+        "history": "히스토리 페이지에 오신 것을 환영합니다!",
+        "event": "이벤트 페이지에 오신 것을 환영합니다!",
+        "goods": "굿즈 페이지에 오신 것을 환영합니다!",
+        "about": "소개 페이지에 오신 것을 환영합니다!"
+    }
 }
