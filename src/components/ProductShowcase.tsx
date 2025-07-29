@@ -48,6 +48,92 @@ const ProductShowcase: React.FC = () => {
             image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
         },
         {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+        {
+
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },        {
+            id: 3,
+            title: '블루투스 스피커',
+            price: '₩333333',
+            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
+        },
+
+
+        {
             id: 4,
             title: '블루투스 스피커',
             price: '₩4444444',
@@ -118,7 +204,7 @@ const ProductShowcase: React.FC = () => {
     }
 
     return (
-        <div className="relative w-full h-screen bg-black overflow-hidden">
+        <div className="relative w-full h-[550px] bg-black overflow-hidden my-4">
             <div
                 className="absolute inset-0 flex items-center justify-center"
                 onMouseDown={handleStart}
@@ -153,7 +239,7 @@ const ProductShowcase: React.FC = () => {
                                     left: '50%',
                                     top: '50%',
                                     marginLeft: '-40px',
-                                    marginTop: '-48px',
+                                    marginTop: '-40px',
                                 }}
                                 onClick={() => setSelectedProduct(product)}
                             >
