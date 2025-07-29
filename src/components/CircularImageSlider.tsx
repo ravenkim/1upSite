@@ -12,7 +12,7 @@ const images = [
     "/images/9.jpg",
 ];
 
-const ThreeDCarousel: React.FC = () => {
+const ThreeDCarousel = () => {
     const [rotationAngle, setRotationAngle] = useState(0);
     const [itemSize, setItemSize] = useState(250);
 
@@ -38,18 +38,18 @@ const ThreeDCarousel: React.FC = () => {
     };
 
     const prev = () => {
-        setRotationAngle((prev) => prev + rotateYDeg); 
+        setRotationAngle((prev) => prev + rotateYDeg);
     };
 
     return (
-        <div className="relative w-full h-[400px] flex items-center justify-center perspective-[1000px]">
+        <div className="relative w-full flex justify-center perspective-[1000px]" style={{ height: `${itemSize * 1.2 + 80}px` }}>
             <div
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700"
+                className="absolute left-1/2 transition-transform duration-700"
                 style={{
                     width: `${itemSize * 2}px`,
                     height: `${itemSize * 1.2}px`,
-                    // 누적 회전 각도 사용
-                    transform: `translateZ(-${radius}px) rotateY(${rotationAngle}deg)`,
+                    top: `${itemSize * 0.1}px`,
+                    transform: `translateX(-50%) translateZ(-${radius}px) rotateY(${rotationAngle}deg)`,
                     transformStyle: "preserve-3d",
                 }}
             >
@@ -90,8 +90,6 @@ const ThreeDCarousel: React.FC = () => {
                     Next
                 </button>
             </div>
-
-
         </div>
     );
 };
