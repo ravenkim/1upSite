@@ -15,7 +15,7 @@ export interface Artist {
 export const artists: Artist[] = [
   {
     id: '1',
-    name: 'Artist A',
+    name: 'popsick',
     profession: {
       en: 'Musician',
       ko: '음악가',
@@ -24,7 +24,7 @@ export const artists: Artist[] = [
       en: 'Artist A is a talented musician known for their unique sound, blending traditional melodies with modern electronic beats. Their live performances are a captivating experience, drawing audiences into a world of rhythm and emotion.',
       ko: '아티스트 A는 전통적인 멜로디와 현대적인 일렉트로닉 비트를 혼합한 독특한 사운드로 유명한 재능 있는 음악가입니다. 그들의 라이브 공연은 리듬과 감정의 세계로 관객을 끌어들이는 매혹적인 경험입니다.',
     },
-    imageUrl: '/src/assets/images/main2.jpg',
+    imageUrl: 'https://search.pstatic.net/common?type=b&size=216&expire=1&refresh=true&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2F166%2F202008191553505781.jpg',
   },
   {
     id: '2',

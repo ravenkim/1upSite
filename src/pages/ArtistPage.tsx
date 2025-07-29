@@ -12,7 +12,7 @@ const ArtistPage: React.FC = () => {
           title="Artists"
       >
           <div className="container mx-auto p-4 bg-background text-foreground">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-3 gap-6">
                   {artists.map((artist) => (
                       <div key={artist.id}
                            className="text-card-foreground rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 ">
