@@ -13,17 +13,17 @@ const images = [
 ];
 
 const ThreeDCarousel: React.FC = () => {
-    const [selectedIndex, setSelectedIndex] = useState(0);
-    const [itemSize, setItemSize] = useState(250); // 초기값, 모바일 기준 조정
+    const [rotationAngle, setRotationAngle] = useState(0);
+    const [itemSize, setItemSize] = useState(250);
 
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
-            const calculatedSize = Math.min(200, Math.floor(screenWidth * 0.6)); // 예: 최대 200px
+            const calculatedSize = Math.min(200, Math.floor(screenWidth * 0.6));
             setItemSize(calculatedSize);
         };
 
-        handleResize(); // 초기 실행
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -33,8 +33,13 @@ const ThreeDCarousel: React.FC = () => {
     const baseRadius = itemSize / (2 * Math.tan(Math.PI / cellCount));
     const radius = baseRadius * 1.3;
 
-    const next = () => setSelectedIndex((prev) => (prev + 1) % cellCount);
-    const prev = () => setSelectedIndex((prev) => (prev - 1 + cellCount) % cellCount);
+    const next = () => {
+        setRotationAngle((prev) => prev - rotateYDeg);
+    };
+
+    const prev = () => {
+        setRotationAngle((prev) => prev + rotateYDeg); 
+    };
 
     return (
         <div className="relative w-full h-[400px] flex items-center justify-center perspective-[1000px]">
@@ -43,7 +48,8 @@ const ThreeDCarousel: React.FC = () => {
                 style={{
                     width: `${itemSize * 2}px`,
                     height: `${itemSize * 1.2}px`,
-                    transform: `translateZ(-${radius}px) rotateY(-${selectedIndex * rotateYDeg}deg)`,
+                    // 누적 회전 각도 사용
+                    transform: `translateZ(-${radius}px) rotateY(${rotationAngle}deg)`,
                     transformStyle: "preserve-3d",
                 }}
             >
@@ -84,6 +90,8 @@ const ThreeDCarousel: React.FC = () => {
                     Next
                 </button>
             </div>
+
+
         </div>
     );
 };
