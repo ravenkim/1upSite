@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { type Product, products } from '@/data/products.ts'
 
-type Product = {
-    id: number
-    title: string
-    price: string
-    image: string
-}
 
 type DragState = {
     isDragging: boolean
@@ -14,6 +9,8 @@ type DragState = {
     velocityX: number
     lastTime: number
 }
+
+
 
 const ProductShowcase: React.FC = () => {
     const sphereRef = useRef<HTMLDivElement | null>(null)
@@ -28,119 +25,7 @@ const ProductShowcase: React.FC = () => {
         lastTime: 0,
     })
 
-    const products: Product[] = [
-        {
-            id: 1,
-            title: '블루투스 스피커',
-            price: '₩11111111',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 2,
-            title: '블루투스 스피커',
-            price: '₩2222222',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        {
 
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },        {
-            id: 3,
-            title: '블루투스 스피커',
-            price: '₩333333',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-
-
-        {
-            id: 4,
-            title: '블루투스 스피커',
-            price: '₩4444444',
-            image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&crop=center',
-        },
-        // 생략 가능
-    ]
 
     const getSphericalPosition = (index: number, total: number, radius = 200) => {
         const phi = Math.acos(-1 + (2 * index) / total)
