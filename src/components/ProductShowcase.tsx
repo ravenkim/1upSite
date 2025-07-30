@@ -128,7 +128,7 @@ const ProductShowcase: React.FC = () => {
                                 <div className="w-full aspect-square border-2 border-border rounded-xl overflow-hidden">
                                     <img
                                         src={product.image}
-                                        alt={product.title[language]}
+                                        alt={product.title[language as keyof typeof product.title]}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -144,7 +144,7 @@ const ProductShowcase: React.FC = () => {
                         <div className="relative mb-6">
                             <img
                                 src={selectedProduct.image}
-                                alt={selectedProduct.title[language]}
+                                alt={selectedProduct.title[language as keyof typeof selectedProduct.title]}
                                 className="w-full h-64 object-cover rounded-2xl"
                             />
                             <button
@@ -155,7 +155,7 @@ const ProductShowcase: React.FC = () => {
                             </button>
                         </div>
                         <div className="text-white space-y-4">
-                            <h2 className="text-2xl font-bold">{selectedProduct.title[language]}</h2>
+                            <h2 className="text-2xl font-bold">{selectedProduct.title[language as keyof typeof selectedProduct.title]}</h2>
                             <div className="flex items-baseline gap-3">
                                 <span className="text-3xl font-bold">{selectedProduct.price}</span>
                             </div>

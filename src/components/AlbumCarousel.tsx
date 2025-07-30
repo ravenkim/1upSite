@@ -12,7 +12,7 @@ const images = [
     "/images/9.jpg",
 ];
 
-const ThreeDCarousel = () => {
+const AlbumCarousel = () => {
     const [rotationAngle, setRotationAngle] = useState(0);
     const [itemSize, setItemSize] = useState(250);
 
@@ -94,4 +94,4 @@ const ThreeDCarousel = () => {
     );
 };
 
-export default ThreeDCarousel;
+export default AlbumCarousel;

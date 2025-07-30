@@ -35,3 +35,10 @@ dist-ssr
 !.yarn/sdks
 !.yarn/versions
 
+
+
+
+**/node_modules/*
+**/.firebaserc
+.runtimeconfig.json
+.firebase/
