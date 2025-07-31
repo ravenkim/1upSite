@@ -33,6 +33,7 @@ export const events: Event[] = [
             en: "City Park Amphitheater",
             ko: "시티 파크 원형극장",
         },
+        finish: true,
         time: "2025-08-15 18:00 - 23:00",
         link: "#",
     },
