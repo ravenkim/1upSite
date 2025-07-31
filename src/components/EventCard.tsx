@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
 import type { Event } from '@/data/events.ts'
 import { useLanguage } from '../hooks/useLanguage';
 
@@ -12,8 +11,18 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
     const { language } = useLanguage();
     const currentLang = language === 'ko' ? 'ko' : 'en';
 
+    const cardClasses = `flex flex-col md:flex-row overflow-hidden mb-5 w-full max-w-md md:max-w-2xl mx-auto ${
+        event.finish ? 'opacity-50 ' : ''
+    }`;
+
+    const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (event.finish) {
+            e.preventDefault();
+        }
+    };
+
     return (
-        <Card className="flex flex-col md:flex-row overflow-hidden mb-4 w-full max-w-md md:max-w-2xl mx-auto">
+        <Card className={cardClasses } onClick={handleCardClick}>
             <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden">
                 <img src={event.image} alt={event.title[currentLang]} className="w-full h-full object-cover" />
             </div>
@@ -27,11 +36,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
                     <p className="text-gray-600"><strong className="font-semibold">시간:</strong> {event.time}</p>
                 </CardContent>
                 <CardFooter className="pt-0">
-                    <Button asChild>
-                        <a href={event.link} target="_blank" rel="noopener noreferrer">
-                            {currentLang === 'ko' ? '자세히 보기' : 'Learn More'}
-                        </a>
-                    </Button>
+
                 </CardFooter>
             </div>
         </Card>

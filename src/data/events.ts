@@ -15,6 +15,7 @@ export interface Event {
         en: string;
         ko: string;
     };
+    finish?: boolean;
 }
 
 export const events: Event[] = [
@@ -54,6 +55,7 @@ export const events: Event[] = [
         },
         time: "2025-09-01 10:00 - 17:00",
         link: "#",
+        finish: false,
     },
     {
         id: "3",
@@ -72,6 +74,7 @@ export const events: Event[] = [
         },
         time: "2025-10-20 09:00 - 18:00",
         link: "#",
+        finish: false,
     },
     {
         id: "4",
@@ -90,5 +93,6 @@ export const events: Event[] = [
         },
         time: "2025-11-05 08:00 - 12:00",
         link: "#",
+        finish: false,
     },
 ];

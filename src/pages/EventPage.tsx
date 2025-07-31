@@ -9,7 +9,7 @@ export default function EventPage() {
         <MobileLayout>
             <div className="p-4">
                 <h1 className="text-3xl font-bold text-center mb-6">{t('welcome.event')}</h1>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center px-4">
                     {events.map(event => (
                         <EventCard key={event.id} event={event} />
                     ))}
