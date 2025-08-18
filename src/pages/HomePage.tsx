@@ -23,6 +23,11 @@ export default function HomePage() {
 Our mission is to build an open community where more people can freely experience, enjoy, and participate in music and culture. At the heart of this vision, 1UP LABEL continues to expand the possibilities of creation and experience for a new generation.`
 
     useEffect(() => {
+        setDisplayedText(''); // Clear displayed text
+        setCurrentIndex(0);   // Reset index
+    }, [fullText]);
+
+    useEffect(() => {
         if (currentIndex < fullText.length) {
             const timer = setTimeout(() => {
                 setDisplayedText(prev => prev + fullText[currentIndex])
