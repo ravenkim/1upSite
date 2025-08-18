@@ -18,5 +18,22 @@
         "event": "Welcome to the Event Page!",
         "goods": "Welcome to the Goods Page!",
         "about": "Welcome to the About Page!"
+    },
+    "professions": {
+        "founder_of_1up": "Founder of 1UP",
+        "executive_director": "Executive Director",
+        "artist": "Artist",
+        "producer": "Producer",
+        "dj": "DJ",
+        "creative_director": "Creative Director",
+        "management": "Management",
+        "mixing_engineer": "Mixing Engineer",
+        "operations_lead_at_1up": "Operations Lead at 1UP",
+        "model": "Model",
+        "video_editor": "Video Editor",
+        "photographer": "Photographer",
+        "video_director": "Video Director",
+        "tech_operator": "Tech Operator",
+        "dancer": "Dancer"
     }
 }
