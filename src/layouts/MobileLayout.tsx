@@ -8,9 +8,11 @@ import MobileHeader from '@/layouts/MobileHeader.tsx'
 export default function MobileLayout({
                                          children,
                                          title = '1UP',
+                                         goBackBtn = false,
                                      }: {
     children?: React.ReactNode
     title?: string
+    goBackBtn?: boolean
 }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { language, setLanguage, t } = useLanguage()
@@ -27,7 +29,9 @@ export default function MobileLayout({
         <div className="bg-muted flex min-h-screen items-start justify-center sm:items-center">
             <div className="relative w-[500px] flex h-screen flex-col overflow-hidden bg-background shadow-lg sm:h-[90vh] sm:rounded-lg sm:outline sm:outline-1">
                 {/* 상단 메뉴 헤더 */}
-                <MobileHeader toggleMenu={toggleMenu} title={title} />
+                <MobileHeader
+                    goBackBtn={goBackBtn}
+                    toggleMenu={toggleMenu} title={title} />
 
                 {/* 실제 페이지 콘텐츠 */}
                 <main className="h-[calc(100%-60px)] w-full">

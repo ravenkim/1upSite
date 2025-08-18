@@ -1,10 +1,11 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { getArtistById } from '../data/artists'
 import MobileLayout from '@/layouts/MobileLayout.tsx'
 import { useLanguage } from '@/hooks/useLanguage'
 
 const ArtistDetailPage: React.FC = () => {
+
     const { id } = useParams<{ id: string }>()
     const artist = getArtistById(id || '')
     const { language } = useLanguage()
@@ -17,10 +18,12 @@ const ArtistDetailPage: React.FC = () => {
         )
     }
 
-    const displayedBio = artist.bio[language as keyof typeof artist.bio]
 
     return (
-        <MobileLayout>
+        <MobileLayout
+            title={artist.name}
+            goBackBtn={true}
+        >
             <div className="bg-background text-foreground container mx-auto p-4">
                 <div className="bg-card text-card-foreground border-border overflow-hidden rounded-lg border shadow-lg md:flex">
                     <div className="md:flex-shrink-0">
@@ -41,7 +44,7 @@ const ArtistDetailPage: React.FC = () => {
                                 ]
                             }
                         </p>
-                        <p className="leading-relaxed">{displayedBio}</p>
+                        {/*<p className="leading-relaxed">{displayedBio}</p>*/}
                     </div>
                 </div>
             </div>
