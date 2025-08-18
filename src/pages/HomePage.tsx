@@ -35,7 +35,7 @@ Our mission is to build an open community where more people can freely experienc
 
     return (
         <MobileLayout>
-            <div className="flex h-full w-full flex-col items-center justify-center px-4 py-8">
+            <div className="flex h-full w-full flex-col items-center justify-center px-4 ">
                 <img
                     src="https://lh3.googleusercontent.com/d/1ttlkxdwb6zlGz8GJF-gEj6O9NmciX421"
                     alt="main image"
@@ -44,7 +44,7 @@ Our mission is to build an open community where more people can freely experienc
 
                 <div className="max-w-xl w-full rounded-2xl border border-border bg-card p-8 text-center shadow-md ring-1 ring-border/50 backdrop-blur">
                     {/* 제목 */}
-                    <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground fade-in">
+                    <h2 className="mb-6 text-2xl font-bold tracking-tight text-foreground fade-in shining-text">
                         {title}
                     </h2>
 
