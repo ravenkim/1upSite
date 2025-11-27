@@ -8,19 +8,81 @@ export default function HomePage() {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const isKor = language === 'ko'
-    const title = isKor ? 'ABOUT US' : 'ABOUT US'
+    const title = isKor ? 'INTRODUCTION' : 'INTRODUCTION'
 
     const fullText = isKor
-        ? `1UP LABEL은 아티스트, 프로듀서, DJ, 엔지니어, 크리에이터 등 음악을 둘러싼 다양한 주체들이 모여 만들어진 커뮤니티형 뮤직 레이블입니다. 우리는 전통적인 레이블의 방식에 머무르지 않고, 인터넷 문화와 라이브 스트리밍 트렌드를 선도하며, 음악과 콘텐츠가 함께 공존하는 새로운 생태계를 지향합니다.
+        ? `1UP LABEL은 아티스트·크리에이터·팬이 서로 연결되고 성장하는
+커뮤니티 기반 크리에이티브 컬처 집단입니다.
 
-1UP LABEL은 단순히 음악을 제작하고 유통하는 곳이 아닙니다. 서로 다른 개성을 가진 멤버들이 모여 아이디어를 교환하고, 실험적인 프로젝트를 실행하며, 관객과 실시간으로 소통하는 무대와 플랫폼을 만들어갑니다.
+음악, 비주얼, 패션, 세계관을 하나의 언어로 엮어
+서로의 잠재력을 '1UP'시키는 문화적 플랫폼을 만들어갑니다.
 
-우리의 목표는 더 많은 사람들이 음악과 문화를 자유롭게 즐기고 참여할 수 있는 열린 공간(Open Community)을 구축하는 것입니다. 1UP LABEL은 그 중심에서, 새로운 세대를 위한 창작과 경험을 계속 확장해 나가고 있습니다.`
-        : `1UP LABEL is a community-driven music label built by a diverse collective of artists, producers, DJs, engineers, and creators. We go beyond the traditional boundaries of a record label, pioneering internet culture and live streaming trends to shape a new ecosystem where music and content coexist.
+DESCRIPTION
 
-1UP LABEL is not just about producing and distributing music. It is a space where unique voices come together to exchange ideas, launch experimental projects, and create platforms that connect directly with audiences in real time.
+GOLDBUUDA(골드부다)를 중심으로
+래퍼, 프로듀서, 비주얼 아티스트, 댄서, 디자이너 등 다양한 창작자들이 모여
+자유롭고 실험적인 방식으로 예술을 확장하는 창작 커뮤니티입니다.
 
-Our mission is to build an open community where more people can freely experience, enjoy, and participate in music and culture. At the heart of this vision, 1UP LABEL continues to expand the possibilities of creation and experience for a new generation.`
+우리는 장르와 문화의 경계를 넘나들며
+힙합·트랩·아프로비츠·아시아 미학·디지털 감성을 결합해
+독자적인 "1UP 사운드"와 "1UP 문화"를 만들어갑니다.
+
+1UP LABEL의 핵심 가치
+
+• Community First
+사람과 사람, 아티스트와 팬의 연결을 최우선으로 하는 참여형 생태계.
+
+• Originality & Worldbuilding
+각자의 정체성과 스토리를 바탕으로 새로운 세계관을 구축하는 창작 방식.
+
+• Experimental Creativity
+힙합을 기반으로 글로벌 사운드와 미래적인 아이디어를 실험하는 태도.
+
+• Independent Spirit
+각 아티스트가 자신만의 방식과 속도로
+작품과 브랜드를 구축할 수 있도록 돕는 자율적인 환경.
+
+1UP LABEL은 문화·정체성·창작자들이 함께 만들어가는 커뮤니티입니다.
+
+함께 창조하고, 함께 성장하며, 함께 1UP 됩니다.`
+        : `1UP LABEL is a community-driven creative collective
+where artists, creators, and fans connect, collaborate, and grow together.
+
+We merge music, visuals, fashion, and worldbuilding into a shared creative language—
+a cultural platform built to uplift one another and push creativity forward.
+
+DESCRIPTION
+
+Founded and led by GOLDBUUDA,
+1UP LABEL is a community of rappers, producers, visual artists, dancers, and designers
+working in a free, experimental environment that encourages authentic expression.
+
+We move fluidly across genres and cultures—
+blending Hip-hop, Trap, Afrobeats, Asian aesthetics, and digital energy
+to shape the distinct "1UP sound" and the evolving "1UP culture."
+
+Core Values of 1UP LABEL
+
+• Community First
+A horizontal ecosystem rooted in connection, collaboration, and shared growth.
+
+• Originality & Worldbuilding
+Projects built from each artist's identity, story, and vision—
+creating new worlds with authenticity at the core.
+
+• Experimental Creativity
+Hip-hop as our foundation,
+with global sounds and future-forward ideas expanding our creative horizons.
+
+• Independent Spirit
+Empowering each creator to develop their sound, visuals, and brand
+in their own way and at their own pace.
+
+1UP LABEL is a creative community shaped by its culture, identity, and the people within it.
+
+We create together.
+We grow together.
+We level up together.`
 
     useEffect(() => {
         setDisplayedText(''); // Clear displayed text

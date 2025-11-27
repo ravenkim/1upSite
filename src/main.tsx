@@ -5,7 +5,6 @@ import './index.css'
 import './App.css'
 // import App from './App.tsx'
 import HomePage from './pages/HomePage.tsx'
-import AboutPage from './pages/AboutPage.tsx'
 import ArtistPage from './pages/ArtistPage.tsx'
 import HistoryPage from './pages/HistoryPage.tsx'
 import EventPage from './pages/EventPage.tsx'
@@ -21,10 +20,7 @@ const router = createBrowserRouter([
                 index: true,
                 element: <HomePage />,
             },
-            {
-                path: 'about',
-                element: <AboutPage />,
-            },
+   
             {
                 path: 'artist',
                 element: <ArtistPage />,
